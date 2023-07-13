@@ -1,6 +1,7 @@
 package com.will.games.dto;
 
 import com.will.games.entities.Game;
+import com.will.games.projections.GameMinProjection;
 
 public class GameMinDTO {
 
@@ -11,6 +12,14 @@ public class GameMinDTO {
     private String shortDescription;
 
     public GameMinDTO(Game game) {
+        this.id = game.getId();
+        this.title = game.getTitle();
+        this.year = game.getYear();
+        this.imgUrl = game.getImgUrl();
+        this.shortDescription = game.getShortDescription();
+    }
+
+    public GameMinDTO(GameMinProjection game) {
         this.id = game.getId();
         this.title = game.getTitle();
         this.year = game.getYear();
